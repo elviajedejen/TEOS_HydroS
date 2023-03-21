@@ -86,7 +86,6 @@ hydrostation_bottle %>%
 ## Teos-10 Toolbox in Package seacarb
 
 ```{r}
-
 ?gsw #launches the documentation for the gibbs seawater toolbox (TEOS-10)
 
 ?gsw_sigma0
@@ -102,8 +101,7 @@ hydrostation_bottle %>%
 #let's plot our pressure data - it's missing before 1980's
 
 hydrostation_bottle %>%
-  ggplot()+
-  geom_point(aes(x=decy,y=Press))
+  ggplot()+geom_point(aes(x=decy,y=Pres))
 
 #We have depth data for the time series
 hydrostation_bottle %>%
@@ -268,7 +266,23 @@ plot=HydroS_shallow %>%
 
 ggplotly(plot)
 
+
+
 ```
+
+##Asignment for class
+```{r}
+HydroS_months=HydroS_corrected %>% 
+  mutate(month=substr(yyyymmd,5,6))
+
+#In Bermuda
+#Dec - March = Winter Months 
+#August to October = Summer Months
+
+month>=8&month<=10     #8 for agust and 10 for october
+month==c(12,1,2,3)
+```
+
 
 
 
